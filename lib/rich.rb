@@ -64,7 +64,7 @@ module Rich
   @@editor = {
     :height => 400,
     :stylesSet  =>  [],
-    :extraPlugins => 'stylesheetparser,richfile,MediaEmbed',
+    :extraPlugins => 'stylesheetparser,richfile,MediaEmbed,autogrow',
     :removePlugins => 'scayt,menubutton,forms',
     :contentsCss => :default,
     :removeDialogTabs => 'link:advanced;link:target',
@@ -74,7 +74,8 @@ module Rich
     :toolbar => [['Format','Styles'],['Bold', 'Italic', '-','NumberedList', 'BulletedList', 'Blockquote', '-', 'richImage', 'richFile','MediaEmbed', '-', 'Link', 'Unlink'],['Source', 'ShowBlocks']],
     :language => I18n.default_locale,
     :richBrowserUrl => '/rich/files/',
-    :uiColor => '#f4f4f4'
+    :uiColor => '#f4f4f4',
+    :autoGrow_onStartup => true
   }
   # End configuration defaults
   
