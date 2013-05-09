@@ -9,14 +9,11 @@ CKEDITOR.plugins.add( 'addparagraph', {
     //the command
     editor.addCommand( 'makeparagraph', {
       exec: function(editor){
-        p = editor.document.createElement( 'p' );
-        parent = editor.getSelection().getStartElement();
-        //console.log(editor.document)
+        var str = "<p>&nbsp;</p>";
+        var p = CKEDITOR.dom.element.createFromHtml(str);
+        var parent = editor.getSelection().getStartElement();
         p.insertAfter(parent);
-        editor.getSelection().selectElement( p )
-      },
-      refresh: function(editor, path){
-        alert("HERRO!");
+        editor.getSelection().selectElement(p);
       }
     })
   }
