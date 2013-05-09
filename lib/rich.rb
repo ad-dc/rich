@@ -64,7 +64,7 @@ module Rich
   @@editor = {
     :height => 400,
     :stylesSet  =>  [],
-    :extraPlugins => 'stylesheetparser,richfile,MediaEmbed,autogrow,liTab',
+    :extraPlugins => 'stylesheetparser,richfile,MediaEmbed,autogrow,liTab,addparagraph',
     :removePlugins => 'scayt,menubutton,forms',
     :contentsCss => :default,
     :removeDialogTabs => 'link:advanced;link:target',
