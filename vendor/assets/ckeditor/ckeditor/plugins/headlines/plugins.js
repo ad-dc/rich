@@ -7,12 +7,33 @@ CKEDITOR.plugins.add( 'headlines', {
     var h5style = new CKEDITOR.style({ element: 'h5' });
     var h6style = new CKEDITOR.style({ element: 'h6' });
 
-    editor.addCommand( 'heading-h1', new CKEDITOR.dialogCommand( h1style ));
-    editor.addCommand( 'heading-h2', new CKEDITOR.dialogCommand( h2style ));
-    editor.addCommand( 'heading-h3', new CKEDITOR.dialogCommand( h3style ));
-    editor.addCommand( 'heading-h4', new CKEDITOR.dialogCommand( h4style ));
-    editor.addCommand( 'heading-h5', new CKEDITOR.dialogCommand( h5style ));
-    editor.addCommand( 'heading-h6', new CKEDITOR.dialogCommand( h6style ));
+    editor.addCommand( 'heading-h1', {
+      exec: function(editor){
+        var sel = editor.getSelection().getStartElement();
+        h1style.applyToObject(sel);
+      }
+    }
+
+    editor.addCommand( 'heading-h2', {
+      exec: function(editor){
+        var sel = editor.getSelection().getStartElement();
+        h2style.applyToObject(sel);
+      }
+    }
+
+    editor.addCommand( 'heading-h3', {
+      exec: function(editor){
+        var sel = editor.getSelection().getStartElement();
+        h3style.applyToObject(sel);
+      }
+    }
+
+    editor.addCommand( 'heading-h4', {
+      exec: function(editor){
+        var sel = editor.getSelection().getStartElement();
+        h4style.applyToObject(sel);
+      }
+    }
   }
 
 });
