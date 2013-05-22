@@ -49,8 +49,11 @@ private
 
       def button
         %Q{
-            <a href='#{Rich.editor[:richBrowserUrl]}' class='button'>
+            <a href='#{Rich.editor[:richBrowserUrl]}' class='button rich-picker-browse'>
               #{I18n.t('picker_browse')}
+            </a>
+            <a href='javascript:void(0);' class='button rich-picker-remove'>
+              #{I18n.t('picker_remove')}
             </a>
         }.html_safe
       end
@@ -59,8 +62,12 @@ private
         %Q{
             <script>
               $(function(){
-                $('##{input_html_options[:id]}_input a').click(function(e){
+                var $el = $('##{input_html_options[:id]}');
+                $('##{input_html_options[:id]}_input .rich-picker-browse').click(function(e){
                   e.preventDefault(); assetPicker.showFinder('##{input_html_options[:id]}', #{editor_options.to_json})
+                });
+                $('##{input_html_options[:id]}_input .rich-picker-remove').click(function(e){
+                  e.preventDefault(); $el.val(''); $('.rich-image-preview').attr('src','data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==')
                 });
               });
             </script>
